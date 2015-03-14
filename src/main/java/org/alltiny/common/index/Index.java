@@ -9,64 +9,64 @@ import java.util.*;
  */
 public class Index<Key,Value> {
 
-	private Map<Key,List<Value>> index = new HashMap<>();
+    private Map<Key,List<Value>> index = new HashMap<>();
 
-	public void put(Key key, Value value) {
-		List<Value> list = index.get(key);
-		if (list == null) {
-			list = new ArrayList<>();
-		}
-		list.add(value);
-		index.put(key, list);
-	}
+    public void put(Key key, Value value) {
+        List<Value> list = index.get(key);
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        list.add(value);
+        index.put(key, list);
+    }
 
-	public List<Value> get(Key key) {
-		return index.get(key);
-	}
+    public List<Value> get(Key key) {
+        return index.get(key);
+    }
 
-	public List<Value> removeAllFor(Key key) {
-		return index.remove(key);
-	}
+    public List<Value> removeAllFor(Key key) {
+        return index.remove(key);
+    }
 
-	public void remove(Key key, Value value) {
-		List<Value> list = index.get(key);
-		if (list != null) {
-			list.remove(value);
-			if (list.isEmpty()) {
-				index.remove(key);
-			}
-		}
-	}
+    public void remove(Key key, Value value) {
+        List<Value> list = index.get(key);
+        if (list != null) {
+            list.remove(value);
+            if (list.isEmpty()) {
+                index.remove(key);
+            }
+        }
+    }
 
-	public void clear() {
-		index.clear();
-	}
+    public void clear() {
+        index.clear();
+    }
 
-	public int size() {
-		return index.size();
-	}
+    public int size() {
+        return index.size();
+    }
 
-	public boolean isEmpty() {
-		return index.isEmpty();
-	}
+    public boolean isEmpty() {
+        return index.isEmpty();
+    }
 
-	public boolean containsKey(Key key) {
-		return index.containsKey(key);
-	}
+    public boolean containsKey(Key key) {
+        return index.containsKey(key);
+    }
 
-	public Set<Key> keySet() {
-		return index.keySet();
-	}
+    public Set<Key> keySet() {
+        return index.keySet();
+    }
 
-	public Set<Map.Entry<Key, List<Value>>> entrySet() {
-		return index.entrySet();
-	}
+    public Set<Map.Entry<Key, List<Value>>> entrySet() {
+        return index.entrySet();
+    }
 
-	public boolean equals(Object o) {
-		return index.equals(o);
-	}
+    public boolean equals(Object o) {
+        return index.equals(o);
+    }
 
-	public int hashCode() {
-		return index.hashCode();
-	}
+    public int hashCode() {
+        return index.hashCode();
+    }
 }
