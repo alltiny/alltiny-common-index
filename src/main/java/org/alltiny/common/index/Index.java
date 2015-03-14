@@ -6,6 +6,8 @@ import java.util.*;
  * An index helps to find elements without searching for them. Other than a map
  * in which each key points to exactly one value, in an index a key may contain
  * more than one values.
+ * @param <Key> type of the key objects to use
+ * @param <Value> type of the value object to store
  */
 public class Index<Key,Value> {
 
